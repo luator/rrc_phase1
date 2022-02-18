@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+
+# convert move_cube goal to single-goal trajectory
+goal=$(python3 -c "import json,sys; g=json.loads(sys.argv[1]); print(json.dumps([[0,g['position']]]))" "$1")
+echo "Reformat goal to '${goal}'"
+set -- "${goal}"
 
 # run the script via `ros2 run` (for python scripts a simple symlink would also
 # work but using `ros2 run` works for C++ executables as well)

@@ -121,7 +121,6 @@ install/
 log/
 
 *.npy
-*.json
 *.txt
 
 videos/
